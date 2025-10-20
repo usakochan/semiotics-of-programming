@@ -23,11 +23,11 @@ class Circle extends Ellipse{ //クラスの定義
 //データ構造と関連する関数を定めるクラスの定義
 
 void run(){
-    Rectangle r = new rectangle (5.0, 8.0); //rがRectangle型のデータを保持することを宣言している
+    Rectangle r = new Rectangle (5.0, 8.0); //rがRectangle型のデータを保持することを宣言している
     Ellipse   u = new Ellipse (3.0, 4.0);   //uがEllipse型のデータを保持することを宣言している
     Circle    v = new Circle (3.0);         //vがCircle型のデータを保持することを宣言している
-    //↑定義部分　
-    Shape [] ss = new Shape[]{r, u, v}; //配列ssに格納。Shapeを継承し続けたことで、Shape型の配列として定義することができるようになっている。
-    for (Shape s : ss) { putStr("area: " + s.area() + "\n")} //"\n"はリテラル
-    //↑使用部分
+    //↑定義ブロック
+    Shape [] ss = new Shape[]{r, u, v}; //配列ssに格納。Shapeを継承し続けたことで、Shape型の配列として定義が可能。
+    for (Shape s : ss) { putStr("area: " + s.area() + "\n");} //"\n"はリテラル
+    //↑使用ブロック
 } 
