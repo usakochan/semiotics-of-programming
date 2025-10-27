@@ -19,6 +19,9 @@ main = let --定義ブロック
         v = Circle 3.0
         ss = [r, u, v] --それぞれをリストssに格納
        in --使用ブロック
-        for (\s -> putStr("area: "++show (area s)++"\n")) ss
+        -- for (\s -> putStr("area: "++show (area s)++"\n")) ss
+         -- forだとこのままでは実行できない
          -- ここの\s ->については第四章でラムダ項について説明した後に、第七章で説明するらしい
          -- //"\n"はリテラル
+        mapM_ (\s -> putStrLn ("area: " ++ show (area s))) ss
+        -- このmapMを使えば得られる
