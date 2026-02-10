@@ -1,17 +1,17 @@
-class Shape{
+class Shape_Java{
     double width, height;
-    Shape(double w, double h){ width=w; height=h; } //データ初期化のための特殊な操作（構成子）
+    Shape_Java(double w, double h){ width=w; height=h; } //データ初期化のための特殊な操作（構成子）
     public double area(){ return width*height; }
 }
 //データと関数(Shapeとarea)をひとまとめにしたクラスの定義
 //doubleは基本型（Javaに備わっている）
 
-class Rectangle extends Shape{ //継承することで記述を省略（Shapeは初期化関数）
+class Rectangle extends Shape_Java{ //継承することで記述を省略（Shapeは初期化関数）
     Rectangle(double w, double h){ super(w,h); }
 }
 //データ構造と関連する関数を定めるクラスの定義
 
-class Ellipse extends Shape{ //クラスの定義
+class Ellipse extends Shape_Java{ //クラスの定義
     Ellipse(double w, double h){ super(w,h); }
     public double area(){ return Math.PI*width*height/4.0; } //area関数を上書きして再定義
 }
@@ -32,15 +32,13 @@ class Circle extends Ellipse{ //クラスの定義
 //     //↑使用ブロック
 // } 
 
-public class Shape_Java{
     public static void main(String[] args) {
         Rectangle r = new Rectangle(5.0, 8.0);
         Ellipse u = new Ellipse(3.0, 4.0);
         Circle v = new Circle(3.0);
 
-        Shape[] ss = new Shape[]{r, u, v};
-        for (Shape s : ss) {
+        Shape_Java[] ss = new Shape_Java[]{r, u, v};
+        for (Shape_Java s : ss) {
             System.out.println("area: " + s.area());
         }
     }
-}
